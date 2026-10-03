@@ -1,0 +1,71 @@
+{
+  "name": "@neocher/dsh-memory-shm",
+  "version": "0.1.0",
+  "description": "Long-term memory tools and optional recall for DeepSeek Harness, backed by an SHM (self-evolving hypergraph memory) service",
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "memory",
+    "long-term-memory",
+    "agent-memory"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neocher/dsh-memory-shm.git"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-timeout": "0.1.7-alpha.2",
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.4",
+    "@deepseek-ai/dsh-agent": "^0.1.7-alpha.2",
+    "@deepseek-ai/dsh-llm": "^0.1.7-alpha.2",
+    "@deepseek-ai/dsh-tools": "^0.1.7-alpha.2",
+    "@deepseek-ai/schemastery": "^3.18.4"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.0.4",
+    "@deepseek-ai/dsh-agent": "0.1.7-alpha.2",
+    "@deepseek-ai/dsh-llm": "0.1.7-alpha.2",
+    "@deepseek-ai/dsh-system-prompt": "0.1.7-alpha.2",
+    "@deepseek-ai/dsh-timeout": "0.1.7-alpha.2",
+    "@deepseek-ai/dsh-tools": "0.1.7-alpha.2",
+    "@deepseek-ai/schemastery": "3.18.4",
+    "@types/node": "^22.20.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8",
+    "yaml": "^2.8.0"
+  }
+}

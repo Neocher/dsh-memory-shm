@@ -1,0 +1,10 @@
+# memory-shm bundle — SHM-backed long-term memory tools and optional recall.
+# The insert carries the load-time defaults: retrieval and the health probe are
+# always registered, writes and automatic recall stay off until a profile asks.
+- insert:
+    - id: memory-shm
+      name: '@neocher/dsh-memory-shm'
+      config:
+        writeEnabled: false
+        recall:
+          enabled: false
